@@ -4,7 +4,7 @@ import Home from '../component/hero/Home'
 import About from '../component/about/About'
 import Login from '../component/login/Login'
 import Register from '../component/register/Register'
-import AddEmp from '../component/addEmp/addEmp'
+import AddEmp from '../component/addEmp/AddEmp'
 import UpdateEmp from '../component/updateEmp/UpdateEmp'
 
 
