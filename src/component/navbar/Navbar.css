@@ -1,0 +1,165 @@
+/* 
+/* ================= Navbar Base ================= */
+:root {
+  --navbar-height: 64px;
+  --navbar-bg: rgba(2, 6, 23, 0.85);
+  --navbar-text: #e2e8f0;
+  --navbar-hover: rgba(37, 99, 235, 0.15);
+  --navbar-active-border: rgba(37, 99, 235, 0.35);
+}
+
+.navbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  width: 100%;
+  height: var(--navbar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  background: var(--navbar-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.6);
+  z-index: 9999;
+}
+
+/* ================= Brand / Logo ================= */
+.logo-cont, 
+.navbar .navbar-brand {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--navbar-text);
+  text-decoration: none;
+}
+
+/* ================= Links ================= */
+.links-cont {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.link-list-cont {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.navabarBtn,
+.navbar .nav-link,
+.navbar a {
+  position: relative;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--navbar-text);
+  padding: 8px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Hover + Active */
+.navabarBtn:hover,
+.navbar .nav-link:hover {
+  background: var(--navbar-hover);
+  color: #bfdbfe;
+}
+.navbar .nav-link.active {
+  background: linear-gradient(
+    180deg,
+    rgba(37, 99, 235, 0.25),
+    rgba(37, 99, 235, 0.18)
+  );
+  border: 1px solid var(--navbar-active-border);
+  box-shadow: inset 0 6px 18px rgba(37, 99, 235, 0.25);
+}
+
+/* Underline animation */
+.navabarBtn::after {
+  content: "";
+  position: absolute;
+  bottom: 4px; left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+.navabarBtn:hover::after {
+  width: 100%;
+}
+
+/* ================= User Section ================= */
+.user-cont {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: transform 0.2s ease;
+}
+.user-img:hover {
+  transform: scale(1.05);
+}
+
+/* ================= Dropdown ================= */
+.dropdown-menu {
+  position: absolute;
+  top: calc(var(--navbar-height));
+  right: 0;
+  min-width: 160px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  padding: 6px 0;
+  z-index: 10000;
+}
+
+.dropdown-item {
+  padding: 10px 14px;
+  font-size: 15px;
+  color: #171717;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.dropdown-item:hover {
+  background: #f5f5f5;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* ================= Responsive ================= */
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 56px;
+  }
+  .navbar {
+    padding: 0 16px;
+  }
+  .link-list-cont {
+    gap: 18px;
+  }
+  .logo-cont {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  .links-cont {
+    display: none; /* hide links on very small screens (use burger menu JS) */
+  }
+} */
